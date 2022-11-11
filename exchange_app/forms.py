@@ -1,12 +1,9 @@
 from django import forms
-import requests
+from .get_data import get_data
 
 
 class ExchangeForm(forms.Form):
-    response = requests.get(
-        url='https://api.exchangerate-api.com/v4/latest/USD'
-        ).json()
-    currencies = [(value, key) for key, value in response.get('rates').items()]
+    currencies = get_data()
     amount = forms.FloatField(
         required=True,
         min_value=0,
