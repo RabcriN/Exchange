@@ -19,6 +19,12 @@ git@github.com:RabcriN/Exchange.git
 cd Exchange
 ```
 
+Выполнить миграции:
+
+```
+python manage.py migrate
+```
+
 Запустить проект:
 
 ```
